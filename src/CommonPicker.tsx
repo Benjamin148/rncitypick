@@ -146,7 +146,6 @@ export default class CommonPicker extends Component<IProps,IState> {
             } else {   //正常的多列数据
                 //检查是否有非数组
                 if(pickerData.some(x=>!Array.isArray(x))) {
-                    console.warn('parallel模式，数组内部要么全部数组，要么全部字符串/数字');
                     //如有有，则将非数组全部转换为数组
                     pickerData = pickerData.map(x=>{
                         if(Array.isArray(x)) {
@@ -169,7 +168,6 @@ export default class CommonPicker extends Component<IProps,IState> {
             }
 
             this.wheelSelectedIndexes = wheelSelectedIndexes;
-            console.log(wheelSelectedIndexes)
         }
         else if (pickerStyle === 'cascade') {
             //找出级别
